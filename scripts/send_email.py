@@ -139,7 +139,9 @@ def main():
     to = os.environ.get("EMAIL_TO", "").strip()
     host = os.environ.get("SMTP_HOST", "").strip()
     user = os.environ.get("SMTP_USER", "").strip()
-    password = os.environ.get("SMTP_PASS", "").replace("\xa0", "").strip()
+    # App passwords are shown in spaced groups (e.g. "abcd efgh ijkl mnop") but
+    # must be sent with no spaces; strip all whitespace (incl. non-breaking).
+    password = re.sub(r"\s+", "", os.environ.get("SMTP_PASS", ""))
 
     if not (to and host and user and password):
         print("Email not configured (need EMAIL_TO, SMTP_HOST, SMTP_USER, SMTP_PASS). Skipping.")
