@@ -50,3 +50,15 @@ jobs:
             git commit -m "Daily fashion report: $(date -u +'%Y-%m-%d')"
             git push
           fi
+
+      - name: Email the edition
+        # Opt-in: skips automatically unless the email secrets below are set.
+        env:
+          EMAIL_TO:   ${{ secrets.EMAIL_TO }}
+          SMTP_HOST:  ${{ secrets.SMTP_HOST }}
+          SMTP_USER:  ${{ secrets.SMTP_USER }}
+          SMTP_PASS:  ${{ secrets.SMTP_PASS }}
+          SMTP_PORT:  ${{ secrets.SMTP_PORT }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          SITE_URL:   https://bb99312.github.io/fashion-intelligence
+        run: python scripts/send_email.py

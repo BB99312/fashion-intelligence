@@ -26,6 +26,28 @@ commits the result.
 Actions). The workflow also runs on demand via the "Run workflow" button in the Actions tab.
 Run locally with `ANTHROPIC_API_KEY=… python scripts/generate.py`.
 
+## Daily email delivery (opt-in)
+
+After publishing, the workflow runs `scripts/send_email.py`, which emails a branded digest of the
+day's edition (headline, standfirst, executive-summary bullets, and a button to the full report).
+It works over standard SMTP, so any provider works (Gmail, Outlook, SendGrid, Mailgun, Amazon SES…).
+
+It is **opt-in** — if the secrets below are not set, the step prints a notice and skips, so the
+daily run is never affected. To enable, add these repository secrets:
+
+| Secret | Required | Notes |
+|---|---|---|
+| `EMAIL_TO` | yes | Recipient(s), comma-separated |
+| `SMTP_HOST` | yes | e.g. `smtp.gmail.com` |
+| `SMTP_USER` | yes | SMTP login |
+| `SMTP_PASS` | yes | Password or app password |
+| `SMTP_PORT` | no | Default `587` (STARTTLS); use `465` for SSL |
+| `EMAIL_FROM` | no | Defaults to `SMTP_USER` |
+
+**Gmail example:** turn on 2-Step Verification, create an [App Password](https://myaccount.google.com/apppasswords),
+then set `SMTP_HOST=smtp.gmail.com`, `SMTP_USER=you@gmail.com`, `SMTP_PASS=<the app password>`,
+`EMAIL_TO=recipient@example.com`.
+
 ## Each report covers
 
 1. **Current season trends** — colors, silhouettes, fabrics, patterns + the collections shaping them
