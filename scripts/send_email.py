@@ -42,10 +42,21 @@ META_RE = re.compile(r"<!--META\s+(\{.*?\})\s*-->", re.DOTALL)
 
 def strip_tags(html: str) -> str:
     text = re.sub(r"<[^>]+>", "", html)
-    text = (text.replace("&amp;", "&").replace("&ldquo;", "“")
-                .replace("&rdquo;", "”").replace("&mdash;", "—")
-                .replace("&nbsp;", " ").replace("&plus;", "+").replace("&rarr;", "→"))
-    return re.sub(r"\s+", " ", text).strip()
+    # Decode the entities we use, then normalize typography to plain ASCII so the
+    # message encodes cleanly over any SMTP server (no SMTPUTF8 dependency).
+    repl = {
+        "&amp;": "&", "&nbsp;": " ", "&#160;": " ", "&plus;": "+", "&rarr;": "->",
+        "&ldquo;": '"', "&rdquo;": '"', "&lsquo;": "'", "&rsquo;": "'",
+        "&mdash;": "-", "&ndash;": "-",
+        "\xa0": " ", "‘": "'", "’": "'", "“": '"', "”": '"',
+        "–": "-", "—": "-", "…": "...", "•": "*",
+        "·": "-", "&middot;": "-",
+    }
+    for k, v in repl.items():
+        text = text.replace(k, v)
+    text = re.sub(r"\s+", " ", text).strip()
+    # Safety net: drop any remaining non-ASCII so headers/body never fail to encode.
+    return text.encode("ascii", "ignore").decode("ascii")
 
 
 def pick_edition() -> Path | None:
@@ -67,6 +78,7 @@ def parse_edition(path: Path):
             title = json.loads(m.group(1)).get("title", title)
         except json.JSONDecodeError:
             pass
+    title = strip_tags(title)
 
     def grab(pattern):
         mm = re.search(pattern, html, re.DOTALL)
@@ -107,7 +119,7 @@ def build_html(title, date_label, standfirst, bullets, url):
     </div>
     <p style="text-align:center;font-family:Arial,sans-serif;font-size:11px;color:#968f81;
               border-top:1px solid #cfc7b7;padding-top:16px;margin:0;">
-      {BRAND} — sent daily. Every claim is sourced; figures are directional.<br>
+      {BRAND} - sent daily. Every claim is sourced; figures are directional.<br>
       <a href="{url}" style="color:#968f81;">View in browser</a>
     </p>
   </div>
@@ -115,11 +127,11 @@ def build_html(title, date_label, standfirst, bullets, url):
 
 
 def build_text(title, date_label, standfirst, bullets, url):
-    lines = [f"RED CARS NY FASHION TRENDS — {date_label}", "", title, "", standfirst,
+    lines = [f"RED CARS NY FASHION TRENDS - {date_label}", "", title, "", standfirst,
              "", "TODAY'S HIGHLIGHTS", ""]
-    lines += [f"  • {b}" for b in bullets]
+    lines += [f"  - {b}" for b in bullets]
     lines += ["", f"Read the full report: {url}", "",
-              f"{BRAND} — sent daily. Every claim is sourced; figures are directional."]
+              f"{BRAND} - sent daily. Every claim is sourced; figures are directional."]
     return "\n".join(lines)
 
 
