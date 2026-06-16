@@ -139,18 +139,24 @@ def main():
     to = os.environ.get("EMAIL_TO", "").strip()
     host = os.environ.get("SMTP_HOST", "").strip()
     user = os.environ.get("SMTP_USER", "").strip()
-    password = os.environ.get("SMTP_PASS", "").strip()
+    password = os.environ.get("SMTP_PASS", "").replace("\xa0", "").strip()
 
     if not (to and host and user and password):
         print("Email not configured (need EMAIL_TO, SMTP_HOST, SMTP_USER, SMTP_PASS). Skipping.")
         return
 
     # Unset GitHub secrets arrive as "" (present-but-empty), so guard each default.
+    # Secrets pasted from a browser can carry stray non-breaking spaces; addresses
+    # and the SMTP envelope must be pure ASCII, so scrub them hard.
+    def addr_clean(s):
+        return s.replace("\xa0", "").encode("ascii", "ignore").decode("ascii").strip()
+
     port_raw = (os.environ.get("SMTP_PORT") or "").strip()
     port = int(port_raw) if port_raw.isdigit() else 587
-    sender = (os.environ.get("EMAIL_FROM") or "").strip() or user
+    sender = addr_clean((os.environ.get("EMAIL_FROM") or "").strip() or user)
+    user = addr_clean(user)
     site = ((os.environ.get("SITE_URL") or "").strip() or DEFAULT_SITE).rstrip("/")
-    recipients = [r.strip() for r in to.split(",") if r.strip()]
+    recipients = [addr_clean(r) for r in to.split(",") if addr_clean(r)]
 
     edition = pick_edition()
     if edition is None:
@@ -160,7 +166,7 @@ def main():
     title, date_label, standfirst, bullets = parse_edition(edition)
 
     msg = EmailMessage()
-    msg["Subject"] = f"{title} — {BRAND}"
+    msg["Subject"] = strip_tags(f"{title} - {BRAND}")
     msg["From"] = sender
     msg["To"] = ", ".join(recipients)
     msg.set_content(build_text(title, date_label, standfirst, bullets, url))
