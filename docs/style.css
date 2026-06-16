@@ -18,6 +18,8 @@
   --line-strong: #16130e;   /* rules */
   --invert-bg:   #16130e;   /* dark panels */
   --invert-tx:   #f4f1ea;
+  --accent:      #c0152f;   /* Red Cars NY brand red */
+  --accent-soft: #e8c9cd;
 
   --display: 'Bodoni Moda', 'Didot', 'Times New Roman', serif;
   --sans:    'Jost', 'Helvetica Neue', Arial, sans-serif;
@@ -72,8 +74,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 0.22rem 0.55rem;
-  background: var(--ink);
-  color: var(--bone);
+  background: var(--accent);
+  color: #fff;
   vertical-align: middle;
   line-height: 1;
 }
@@ -250,7 +252,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-style: italic;
   font-weight: 400;
   font-size: 1.5rem;
-  color: var(--ink-faint);
+  color: var(--accent);
   line-height: 1;
 }
 .section-title {
@@ -669,6 +671,97 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .watch { padding: 2.2rem 1.6rem; }
   .stat { border-right: none; border-bottom: 1px solid var(--line); }
   .stat:last-child { border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RED CARS NY — brandmark, hero car, charts
+   ═══════════════════════════════════════════════════════════════════════ */
+.brandmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+.brandmark .car-logo {
+  width: 96px;
+  height: auto;
+  flex-shrink: 0;
+}
+.wordmark-block .wordmark .red { color: var(--accent); }
+.accent-rule {
+  width: 64px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.1rem auto 0;
+}
+
+/* Hero car on the home page */
+.hero-car {
+  display: block;
+  width: min(560px, 88%);
+  height: auto;
+  margin: 0 auto 2.2rem;
+}
+
+/* ── Charts ─────────────────────────────────────────────────────────────── */
+.chart-block {
+  margin: 0 0 2.6rem;
+}
+.chart-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+.chart-note {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  margin-bottom: 1.1rem;
+}
+.chart-svg { width: 100%; height: auto; display: block; }
+.chart-bar { fill: var(--accent); }
+.chart-bar.alt { fill: var(--ink); }
+.chart-bar.mute { fill: var(--line-mid); }
+.chart-axis { stroke: var(--line-mid); stroke-width: 1; }
+.chart-grid { stroke: var(--line); stroke-width: 1; }
+.chart-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  fill: var(--ink-soft);
+}
+.chart-value {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 11px;
+  fill: var(--ink);
+}
+.chart-axis-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--ink-faint);
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0.6rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { width: 12px; height: 12px; display: inline-block; border-radius: 2px; }
+.legend i.c-accent { background: var(--accent); }
+.legend i.c-ink { background: var(--ink); }
+.legend i.c-mute { background: var(--line-mid); }
+
+@media (max-width: 700px) {
+  .brandmark { flex-direction: column; gap: 0.7rem; }
+  .brandmark .car-logo { width: 110px; }
 }
 
 @media (max-width: 560px) {

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Charts — Red Cars NY Fashion Trends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Jost:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-head container">
+    <div class="topline">
+      <span><a href="index.html">&larr;&nbsp;&nbsp;Latest Edition</a></span>
+      <span>Market Intelligence</span>
+      <span><a href="archive.html">Archive</a></span>
+    </div>
+    <div class="wordmark-block">
+      <div class="brandmark">
+        <img class="car-logo" src="assets/redcar.svg" alt="Red Cars NY" />
+        <h1 class="wordmark"><span class="red">Red Cars NY</span><br />Fashion Trends</h1>
+      </div>
+      <p class="tagline">Market Charts · Season &amp; Location</p>
+      <div class="accent-rule"></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <span class="kicker">Analysis</span>
+      <h1>Market Trends by Season &amp; Location</h1>
+    </div>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <span class="section-title">The Resale Engine</span>
+        <span class="section-sub">Where consumer spending is shifting fastest</span>
+      </div>
+
+      <!-- CHART 1: US online resale market -->
+      <div class="chart-block">
+        <p class="chart-title">US Online Resale Market ($ Billions)</p>
+        <p class="chart-note">Sourced. 2026 is a projection. Up ~19% year-over-year — and the global secondhand apparel market is forecast to reach <strong>$393B by 2030</strong>. <a href="https://chainstoreage.com/thredup-us-resale-apparel-hit-788m-2030-10-most-shopped-resale-brands">ThredUp / Chain Store Age</a>, <a href="https://www.emarketer.com/content/resale-share-of-fashion-spending-continues-grow">eMarketer</a>.</p>
+        <svg class="chart-svg" viewBox="0 0 640 320" role="img" aria-label="US online resale market: $26B in 2025, $31B projected in 2026">
+          <!-- gridlines -->
+          <line class="chart-grid" x1="70" y1="270" x2="600" y2="270"/>
+          <line class="chart-grid" x1="70" y1="204" x2="600" y2="204"/>
+          <line class="chart-grid" x1="70" y1="139" x2="600" y2="139"/>
+          <line class="chart-grid" x1="70" y1="73" x2="600" y2="73"/>
+          <text class="chart-label" x="60" y="274" text-anchor="end">$0</text>
+          <text class="chart-label" x="60" y="208" text-anchor="end">$10</text>
+          <text class="chart-label" x="60" y="143" text-anchor="end">$20</text>
+          <text class="chart-label" x="60" y="77" text-anchor="end">$30</text>
+          <!-- bars -->
+          <rect class="chart-bar mute" x="147" y="99" width="110" height="171"/>
+          <text class="chart-value" x="202" y="91" text-anchor="middle">$26B</text>
+          <text class="chart-label" x="202" y="290" text-anchor="middle">2025</text>
+          <rect class="chart-bar" x="412" y="66" width="110" height="204"/>
+          <text class="chart-value" x="467" y="58" text-anchor="middle">$31B</text>
+          <text class="chart-label" x="467" y="290" text-anchor="middle">2026 (proj.)</text>
+          <line class="chart-axis" x1="70" y1="270" x2="600" y2="270"/>
+        </svg>
+      </div>
+
+      <!-- CHART 2: secondhand adoption -->
+      <div class="chart-block">
+        <p class="chart-title">Consumers Who Shopped Secondhand Apparel (%)</p>
+        <p class="chart-note">Sourced. Adoption rose ~7 points in three years; Gen Z and Millennials drive ~70% of resale growth through 2030. <a href="https://chainstoreage.com/thredup-us-resale-apparel-hit-788m-2030-10-most-shopped-resale-brands">ThredUp</a>.</p>
+        <svg class="chart-svg" viewBox="0 0 640 320" role="img" aria-label="Secondhand adoption: 52% in 2022 rising to 59% in 2025">
+          <line class="chart-grid" x1="70" y1="270" x2="600" y2="270"/>
+          <line class="chart-grid" x1="70" y1="205" x2="600" y2="205"/>
+          <line class="chart-grid" x1="70" y1="139" x2="600" y2="139"/>
+          <line class="chart-grid" x1="70" y1="74" x2="600" y2="74"/>
+          <text class="chart-label" x="60" y="274" text-anchor="end">0%</text>
+          <text class="chart-label" x="60" y="209" text-anchor="end">25%</text>
+          <text class="chart-label" x="60" y="143" text-anchor="end">50%</text>
+          <text class="chart-label" x="60" y="78" text-anchor="end">75%</text>
+          <rect class="chart-bar mute" x="147" y="99" width="110" height="171"/>
+          <text class="chart-value" x="202" y="91" text-anchor="middle">52%</text>
+          <text class="chart-label" x="202" y="290" text-anchor="middle">2022</text>
+          <rect class="chart-bar" x="412" y="76" width="110" height="194"/>
+          <text class="chart-value" x="467" y="68" text-anchor="middle">59%</text>
+          <text class="chart-label" x="467" y="290" text-anchor="middle">2025</text>
+          <line class="chart-axis" x1="70" y1="270" x2="600" y2="270"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <span class="section-title">By Season</span>
+        <span class="section-sub">Relative trend emphasis across the 2026 cycle</span>
+      </div>
+
+      <!-- CHART 3: seasonal emphasis -->
+      <div class="chart-block">
+        <p class="chart-title">Seasonal Trend Emphasis Index</p>
+        <p class="chart-note"><strong>Directional</strong> editorial index (0–100), not a measured statistic — reflects relative consumer-trend intensity by season for the 2026 cycle. Summer is elevated by the FIFA World Cup; transitional Fall demand is strong. Summer is the current season.</p>
+        <svg class="chart-svg" viewBox="0 0 640 320" role="img" aria-label="Seasonal trend emphasis: Spring 70, Summer 88, Fall 80, Winter 64">
+          <line class="chart-grid" x1="70" y1="270" x2="600" y2="270"/>
+          <line class="chart-grid" x1="70" y1="213" x2="600" y2="213"/>
+          <line class="chart-grid" x1="70" y1="155" x2="600" y2="155"/>
+          <line class="chart-grid" x1="70" y1="98" x2="600" y2="98"/>
+          <text class="chart-label" x="60" y="274" text-anchor="end">0</text>
+          <text class="chart-label" x="60" y="217" text-anchor="end">25</text>
+          <text class="chart-label" x="60" y="159" text-anchor="end">50</text>
+          <text class="chart-label" x="60" y="102" text-anchor="end">75</text>
+          <!-- Spring -->
+          <rect class="chart-bar alt" x="101" y="109" width="70" height="161"/>
+          <text class="chart-value" x="136" y="101" text-anchor="middle">70</text>
+          <text class="chart-label" x="136" y="290" text-anchor="middle">Spring</text>
+          <!-- Summer (current) -->
+          <rect class="chart-bar" x="234" y="68" width="70" height="202"/>
+          <text class="chart-value" x="269" y="60" text-anchor="middle">88</text>
+          <text class="chart-label" x="269" y="290" text-anchor="middle">Summer ●</text>
+          <!-- Fall -->
+          <rect class="chart-bar alt" x="366" y="86" width="70" height="184"/>
+          <text class="chart-value" x="401" y="78" text-anchor="middle">80</text>
+          <text class="chart-label" x="401" y="290" text-anchor="middle">Fall</text>
+          <!-- Winter -->
+          <rect class="chart-bar alt" x="499" y="123" width="70" height="147"/>
+          <text class="chart-value" x="534" y="115" text-anchor="middle">64</text>
+          <text class="chart-label" x="534" y="290" text-anchor="middle">Winter</text>
+          <line class="chart-axis" x1="70" y1="270" x2="600" y2="270"/>
+        </svg>
+        <div class="legend">
+          <span><i class="c-accent"></i> Current season</span>
+          <span><i class="c-ink"></i> Other seasons</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <span class="section-title">By Location</span>
+        <span class="section-sub">NYC · Los Angeles · Chicago style profile</span>
+      </div>
+
+      <!-- CHART 4: city comparison -->
+      <div class="chart-block">
+        <p class="chart-title">City Style Profile</p>
+        <p class="chart-note"><strong>Directional</strong> editorial index (0–100) of how strongly each aesthetic reads in each market, based on this week's street-style and retail reporting — not a measured statistic. NYC leans clean statement streetwear; LA leans quiet luxury / resort; Chicago over-indexes on vintage &amp; resale.</p>
+        <svg class="chart-svg" viewBox="0 0 720 340" role="img" aria-label="City style profile comparing NYC, LA and Chicago across streetwear, quiet luxury, vintage/resale and tailoring">
+          <!-- gridlines -->
+          <line class="chart-grid" x1="70" y1="280" x2="700" y2="280"/>
+          <line class="chart-grid" x1="70" y1="222" x2="700" y2="222"/>
+          <line class="chart-grid" x1="70" y1="165" x2="700" y2="165"/>
+          <line class="chart-grid" x1="70" y1="107" x2="700" y2="107"/>
+          <line class="chart-grid" x1="70" y1="50" x2="700" y2="50"/>
+          <text class="chart-label" x="60" y="284" text-anchor="end">0</text>
+          <text class="chart-label" x="60" y="226" text-anchor="end">25</text>
+          <text class="chart-label" x="60" y="169" text-anchor="end">50</text>
+          <text class="chart-label" x="60" y="111" text-anchor="end">75</text>
+          <text class="chart-label" x="60" y="54" text-anchor="end">100</text>
+
+          <!-- Streetwear -->
+          <rect class="chart-bar"      x="91.75"  y="84.5"  width="34" height="195.5"/>
+          <rect class="chart-bar alt"  x="131.75" y="119"   width="34" height="161"/>
+          <rect class="chart-bar mute" x="171.75" y="77.6"  width="34" height="202.4"/>
+          <text class="chart-label" x="148.75" y="300" text-anchor="middle">Streetwear</text>
+
+          <!-- Quiet Luxury -->
+          <rect class="chart-bar"      x="249.25" y="114.4" width="34" height="165.6"/>
+          <rect class="chart-bar alt"  x="289.25" y="73"    width="34" height="207"/>
+          <rect class="chart-bar mute" x="329.25" y="153.5" width="34" height="126.5"/>
+          <text class="chart-label" x="306.25" y="300" text-anchor="middle">Quiet Luxury</text>
+
+          <!-- Vintage / Resale -->
+          <rect class="chart-bar"      x="406.75" y="107.5" width="34" height="172.5"/>
+          <rect class="chart-bar alt"  x="446.75" y="130.5" width="34" height="149.5"/>
+          <rect class="chart-bar mute" x="486.75" y="68.4"  width="34" height="211.6"/>
+          <text class="chart-label" x="463.75" y="300" text-anchor="middle">Vintage / Resale</text>
+
+          <!-- Tailoring -->
+          <rect class="chart-bar"      x="564.25" y="96"  width="34" height="184"/>
+          <rect class="chart-bar alt"  x="604.25" y="142" width="34" height="138"/>
+          <rect class="chart-bar mute" x="644.25" y="119" width="34" height="161"/>
+          <text class="chart-label" x="621.25" y="300" text-anchor="middle">Tailoring</text>
+
+          <line class="chart-axis" x1="70" y1="280" x2="700" y2="280"/>
+        </svg>
+        <div class="legend">
+          <span><i class="c-accent"></i> New York</span>
+          <span><i class="c-ink"></i> Los Angeles</span>
+          <span><i class="c-mute"></i> Chicago</span>
+        </div>
+      </div>
+
+      <p class="prose" style="font-size:0.82rem; color:var(--ink-faint); max-width:none;">
+        City profiles are directional, drawn from current street-style and retail reporting:
+        <a href="https://www.nycmode.com/blogs/style/nyc-streetwear-style-guide-outfits-trends-2026">NYCMode</a>,
+        <a href="https://travelinstyles.com/chicago-street-style-guide/">TravelInStyles (Chicago)</a>,
+        <a href="https://www.harpersbazaar.in/amp/fashion/story/junes-hottest-fashion-drops-luxury-launches-and-collaborations-to-know-right-now-1405909-2026-06-11">Harper's Bazaar</a>.
+        Indices are editorial estimates for comparison, not measured market shares.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-foot container">
+    <div class="foot-mark">Red Cars NY Fashion Trends</div>
+    <div class="foot-links">
+      <a href="index.html">Latest Edition</a> · <a href="archive.html">Archive</a> · Updated Daily
+    </div>
+    <p class="foot-note">Sourced figures are linked. Index charts marked "directional" are editorial estimates for comparison, not measured statistics.</p>
+  </footer>
+
+</body>
+</html>

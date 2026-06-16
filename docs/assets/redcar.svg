@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 150" role="img" aria-label="Red classic convertible">
+  <g fill="#c0152f">
+    <!-- body -->
+    <path d="M16 104
+             C 18 92, 30 88, 44 86
+             L 96 80
+             C 120 64, 150 55, 196 56
+             C 232 57, 262 64, 286 78
+             L 322 86
+             C 340 89, 348 95, 350 104
+             L 351 112
+             C 351 116, 348 118, 344 118
+             L 24 118
+             C 19 118, 15 115, 15 110 Z"/>
+    <!-- rear deck rise -->
+    <path d="M250 64 C 268 58, 286 60, 300 70 L 290 80 C 276 72, 262 70, 250 73 Z"/>
+  </g>
+  <!-- windshield + cockpit cut (paper color) -->
+  <path d="M150 57 C 168 47, 190 44, 214 47 L 226 64 C 206 58, 184 58, 168 64 Z" fill="#f4f1ea"/>
+  <!-- belt-line highlight -->
+  <path d="M40 88 C 90 78, 150 70, 210 71 C 252 72, 286 78, 320 90" fill="none" stroke="#f4f1ea" stroke-width="3" stroke-linecap="round"/>
+  <!-- door line -->
+  <path d="M150 72 L 162 104" fill="none" stroke="#f4f1ea" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- wheels -->
+  <g>
+    <circle cx="92" cy="118" r="26" fill="#c0152f"/>
+    <circle cx="92" cy="118" r="26" fill="none" stroke="#f4f1ea" stroke-width="3"/>
+    <circle cx="92" cy="118" r="10" fill="#f4f1ea"/>
+    <circle cx="92" cy="118" r="3.4" fill="#c0152f"/>
+    <circle cx="280" cy="118" r="26" fill="#c0152f"/>
+    <circle cx="280" cy="118" r="26" fill="none" stroke="#f4f1ea" stroke-width="3"/>
+    <circle cx="280" cy="118" r="10" fill="#f4f1ea"/>
+    <circle cx="280" cy="118" r="3.4" fill="#c0152f"/>
+  </g>
+  <!-- spokes -->
+  <g stroke="#c0152f" stroke-width="2.2">
+    <line x1="92" y1="108" x2="92" y2="128"/><line x1="82" y1="118" x2="102" y2="118"/>
+    <line x1="280" y1="108" x2="280" y2="128"/><line x1="270" y1="118" x2="290" y2="118"/>
+  </g>
+  <!-- headlight -->
+  <circle cx="36" cy="98" r="5" fill="#f4f1ea"/>
+</svg>
