@@ -133,9 +133,11 @@ def main():
         print("Email not configured (need EMAIL_TO, SMTP_HOST, SMTP_USER, SMTP_PASS). Skipping.")
         return
 
-    port = int(os.environ.get("SMTP_PORT", "587"))
-    sender = os.environ.get("EMAIL_FROM", "").strip() or user
-    site = os.environ.get("SITE_URL", DEFAULT_SITE).rstrip("/")
+    # Unset GitHub secrets arrive as "" (present-but-empty), so guard each default.
+    port_raw = (os.environ.get("SMTP_PORT") or "").strip()
+    port = int(port_raw) if port_raw.isdigit() else 587
+    sender = (os.environ.get("EMAIL_FROM") or "").strip() or user
+    site = ((os.environ.get("SITE_URL") or "").strip() or DEFAULT_SITE).rstrip("/")
     recipients = [r.strip() for r in to.split(",") if r.strip()]
 
     edition = pick_edition()
