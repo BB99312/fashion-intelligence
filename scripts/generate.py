@@ -153,7 +153,7 @@ def page_html(date_iso: str, title: str, body: str) -> str:
     </div>
     <div class="wordmark-block">
       <div class="brandmark">
-        <img class="car-logo" src="../assets/redcar.svg" alt="Red Cars NY" />
+        <img class="car-logo" src="../assets/redcar.png" alt="Red Cars NY" />
         <h1 class="wordmark"><span class="red">Red Cars NY</span><br />Fashion Trends</h1>
       </div>
       <p class="tagline">Trends · Releases · Behavior · Streetwear</p>
@@ -253,7 +253,7 @@ def rebuild_index(editions, latest, dek):
     </div>
     <div class="wordmark-block">
       <div class="brandmark">
-        <img class="car-logo" src="assets/redcar.svg" alt="Red Cars NY" />
+        <img class="car-logo" src="assets/redcar.png" alt="Red Cars NY" />
         <h1 class="wordmark"><span class="red">Red Cars NY</span><br />Fashion Trends</h1>
       </div>
       <p class="tagline">Trends · Releases · Behavior · Streetwear</p>
@@ -272,7 +272,7 @@ def rebuild_index(editions, latest, dek):
   <main class="container">
 
     <section class="hero">
-      <img class="hero-car" src="assets/redcar.svg" alt="Red Cars NY" />
+      <img class="hero-car" src="assets/redcar.png" alt="Red Cars NY" />
       <span class="kicker hero-kicker">Latest Edition · {human_date(latest["date"])}</span>
       <h2 class="hero-title"><a href="{latest_link}">{latest["title"]}</a></h2>
       <p class="hero-dek">{dek}</p>
@@ -355,7 +355,7 @@ def rebuild_archive(editions):
     </div>
     <div class="wordmark-block">
       <div class="brandmark">
-        <img class="car-logo" src="assets/redcar.svg" alt="Red Cars NY" />
+        <img class="car-logo" src="assets/redcar.png" alt="Red Cars NY" />
         <h1 class="wordmark"><span class="red">Red Cars NY</span><br />Fashion Trends</h1>
       </div>
       <p class="tagline">Trends · Releases · Behavior · Streetwear</p>
