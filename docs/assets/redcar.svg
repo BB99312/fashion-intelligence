@@ -16,20 +16,20 @@
     <path d="M250 64 C 268 58, 286 60, 300 70 L 290 80 C 276 72, 262 70, 250 73 Z"/>
   </g>
   <!-- windshield + cockpit cut (paper color) -->
-  <path d="M150 57 C 168 47, 190 44, 214 47 L 226 64 C 206 58, 184 58, 168 64 Z" fill="#f4f1ea"/>
+  <path d="M150 57 C 168 47, 190 44, 214 47 L 226 64 C 206 58, 184 58, 168 64 Z" fill="#f8f6f1"/>
   <!-- belt-line highlight -->
-  <path d="M40 88 C 90 78, 150 70, 210 71 C 252 72, 286 78, 320 90" fill="none" stroke="#f4f1ea" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 88 C 90 78, 150 70, 210 71 C 252 72, 286 78, 320 90" fill="none" stroke="#f8f6f1" stroke-width="3" stroke-linecap="round"/>
   <!-- door line -->
-  <path d="M150 72 L 162 104" fill="none" stroke="#f4f1ea" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M150 72 L 162 104" fill="none" stroke="#f8f6f1" stroke-width="2.5" stroke-linecap="round"/>
   <!-- wheels -->
   <g>
     <circle cx="92" cy="118" r="26" fill="#c0152f"/>
-    <circle cx="92" cy="118" r="26" fill="none" stroke="#f4f1ea" stroke-width="3"/>
-    <circle cx="92" cy="118" r="10" fill="#f4f1ea"/>
+    <circle cx="92" cy="118" r="26" fill="none" stroke="#f8f6f1" stroke-width="3"/>
+    <circle cx="92" cy="118" r="10" fill="#f8f6f1"/>
     <circle cx="92" cy="118" r="3.4" fill="#c0152f"/>
     <circle cx="280" cy="118" r="26" fill="#c0152f"/>
-    <circle cx="280" cy="118" r="26" fill="none" stroke="#f4f1ea" stroke-width="3"/>
-    <circle cx="280" cy="118" r="10" fill="#f4f1ea"/>
+    <circle cx="280" cy="118" r="26" fill="none" stroke="#f8f6f1" stroke-width="3"/>
+    <circle cx="280" cy="118" r="10" fill="#f8f6f1"/>
     <circle cx="280" cy="118" r="3.4" fill="#c0152f"/>
   </g>
   <!-- spokes -->
@@ -38,5 +38,5 @@
     <line x1="280" y1="108" x2="280" y2="128"/><line x1="270" y1="118" x2="290" y2="118"/>
   </g>
   <!-- headlight -->
-  <circle cx="36" cy="98" r="5" fill="#f4f1ea"/>
+  <circle cx="36" cy="98" r="5" fill="#f8f6f1"/>
 </svg>

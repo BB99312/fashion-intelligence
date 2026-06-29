@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* ═══════════════════════════════════════════════════════════════════════
    FASHION INTELLIGENCE — Design System
-   Sleek editorial aesthetic · Bodoni Moda (display) + Jost (sans)
+   Editorial aesthetic · Bodoni Moda (display headlines) + Inter (text/UI)
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ── Reset ─────────────────────────────────────────────────────────────── */
@@ -8,21 +10,21 @@
 
 /* ── Tokens ────────────────────────────────────────────────────────────── */
 :root {
-  --bone:        #f4f1ea;   /* page background */
-  --paper:       #faf8f3;   /* raised surfaces */
-  --ink:         #16130e;   /* near-black */
-  --ink-soft:    #5f594e;   /* secondary text */
-  --ink-faint:   #968f81;   /* tertiary / meta */
-  --line:        #e2dcd0;   /* hairlines */
+  --bone:        #f8f6f1;   /* page background — cleaner, lighter */
+  --paper:       #fdfcfa;   /* raised surfaces */
+  --ink:         #14110c;   /* near-black body text */
+  --ink-soft:    #4d473d;   /* secondary text — darker for readability */
+  --ink-faint:   #847d70;   /* tertiary / meta */
+  --line:        #e4ded3;   /* hairlines */
   --line-mid:    #cfc7b7;
-  --line-strong: #16130e;   /* rules */
-  --invert-bg:   #16130e;   /* dark panels */
-  --invert-tx:   #f4f1ea;
+  --line-strong: #14110c;   /* rules */
+  --invert-bg:   #14110c;   /* dark panels */
+  --invert-tx:   #f8f6f1;
   --accent:      #c0152f;   /* Red Cars NY brand red */
   --accent-soft: #e8c9cd;
 
   --display: 'Bodoni Moda', 'Didot', 'Times New Roman', serif;
-  --sans:    'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --sans:    'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 
   --maxw: 1080px;
   --readw: 760px;
@@ -37,12 +39,13 @@ html {
 
 body {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--ink);
   background: var(--bone);
   line-height: 1.7;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -141,7 +144,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .wordmark .amp { font-style: italic; font-weight: 400; }
 .tagline {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -194,8 +197,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .report-standfirst {
   font-family: var(--sans);
-  font-weight: 300;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--ink-soft);
   margin-top: 1.4rem;
@@ -264,7 +267,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .section-sub {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.74rem;
   letter-spacing: 0.04em;
   color: var(--ink-faint);
@@ -276,8 +279,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Prose */
 .prose {
   max-width: var(--readw);
-  font-size: 0.96rem;
-  line-height: 1.78;
+  font-size: 1.02rem;
+  line-height: 1.8;
   color: var(--ink);
   margin-bottom: 1.2rem;
 }
@@ -317,7 +320,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .swatch-hex {
   display: block;
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   color: var(--ink-faint);
@@ -344,7 +347,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--ink-soft);
   padding-top: 0.15rem;
 }
-.attr-body { font-size: 0.92rem; line-height: 1.65; }
+.attr-body { font-size: 0.95rem; line-height: 1.65; }
 .attr-body strong { font-weight: 500; }
 
 /* ── Cards / grids ─────────────────────────────────────────────────────── */
@@ -376,7 +379,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--ink-faint);
   margin-bottom: 0.6rem;
 }
-.entry-body { font-size: 0.9rem; line-height: 1.65; color: var(--ink); }
+.entry-body { font-size: 0.93rem; line-height: 1.65; color: var(--ink); }
 .entry-body a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: var(--line-mid); }
 
 /* Stat band */
@@ -402,7 +405,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .stat-num .unit { font-size: 1.05rem; font-style: italic; font-weight: 400; }
 .stat-label {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.74rem;
   line-height: 1.4;
   color: var(--ink-soft);
@@ -715,7 +718,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .chart-note {
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.8rem;
   color: var(--ink-faint);
   margin-bottom: 1.1rem;
